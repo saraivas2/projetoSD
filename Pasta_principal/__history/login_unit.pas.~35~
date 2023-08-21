@@ -1,0 +1,94 @@
+﻿unit login_unit;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
+  FMX.ExtCtrls, FMX.Objects, FMX.StdCtrls, FMX.Controls.Presentation, FMX.Edit, System.JSON,
+  REST.Response.Adapter;
+
+type
+  TFormLoginUs = class(TForm)
+    edLogin: TEdit;
+    edSenha: TEdit;
+    Label1: TLabel;
+    Label3: TLabel;
+    BtnConfirma: TSpeedButton;
+    ImgBtnconfirma: TImage;
+    btnCancela: TSpeedButton;
+    imgBtnCancela: TImage;
+    ednome: TEdit;
+    procedure btnCancelaClick(Sender: TObject);
+    procedure BtnConfirmaClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    FCod_login: string;
+
+    { Private declarations }
+  public
+    property codlogin: string read FCod_login write FCod_login;
+  end;
+
+var
+  FormLoginUs: TFormLoginUs;
+
+implementation
+uses chat_mult, module_chat,RESTRequest4D,DataSet.Serialize.Adapter.RestRequest4D;
+
+const
+    BASE_URL = 'http://localhost:5000';
+
+{$R *.fmx}
+
+procedure TFormLoginUs.btnCancelaClick(Sender: TObject);
+begin
+     close;
+end;
+
+procedure TFormLoginUs.BtnConfirmaClick(Sender: TObject);
+var
+  nome, senha,
+  edlog, edSenhas: string;
+  encontra: boolean;
+begin
+    encontra:=False;
+    edlog:= edLogin.Text;
+    edSenhas:= edSenha.Text;
+    try
+      //DataModule1.RESTReqChat.Execute;
+      TRequest.New.BaseURL(BASE_URL)
+          .Resource('usuario')
+          .Adapters(TDataSetSerializeAdapter.New(DataModule1.MemTableUsuario))
+          .Get;
+      while NOT DataModule1.MemTableUsuario.Eof do
+            begin
+                  codlogin:=DataModule1.MemTableUsuario.FieldByName('usuarioid').AsString;
+                  senha:=DataModule1.MemTableUsuario.FieldByName('senha').AsString;
+                  if (codlogin=edLog) and (senha=edSenhas) then
+                  begin
+                      encontra:= True;
+                      ednome.Text:= DataModule1.MemTableUsuario.FieldByName('nome').AsString;
+                  end;
+                 DataModule1.MemTableUsuario.Next;
+            end;
+    Except
+        ShowMessage('Houve um problema!')
+    end;
+
+    if encontra = True then
+    begin
+        FormLoginUs.Destroy;
+    end
+    else
+    begin
+         ShowMessage('Usuário não encontrado!')
+    end;
+end;
+
+procedure TFormLoginUs.FormDestroy(Sender: TObject);
+begin
+     Chat_form.Show;
+end;
+
+end.

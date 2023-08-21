@@ -1,0 +1,159 @@
+object FormCadUs: TFormCadUs
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Usuarios'
+  ClientHeight = 336
+  ClientWidth = 507
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object edLogin: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Scale
+    TabOrder = 4
+    Position.X = 39.960590362548830000
+    Position.Y = 114.790077209472700000
+    Size.Width = 280.972808837890600000
+    Size.Height = 26.306053161621090000
+    Size.PlatformDefault = False
+  end
+  object edNome: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Scale
+    TabOrder = 3
+    Position.X = 39.960590362548830000
+    Position.Y = 172.185089111328100000
+    Size.Width = 420.835662841796900000
+    Size.Height = 26.306106567382810000
+    Size.PlatformDefault = False
+  end
+  object edSenha: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Scale
+    TabOrder = 2
+    Position.X = 39.960590362548830000
+    Position.Y = 229.580154418945300000
+    Size.Width = 181.071426391601600000
+    Size.Height = 26.306045532226560000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    Align = Scale
+    StyledSettings = [Family, Size, Style]
+    Position.X = 39.960590362548830000
+    Position.Y = 95.658355712890630000
+    Size.Width = 149.852310180664100000
+    Size.Height = 20.327377319335940000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claDarkblue
+    Text = 'Login'
+    TabOrder = 8
+  end
+  object Label2: TLabel
+    Align = Scale
+    StyledSettings = [Family, Size, Style]
+    Position.X = 39.960590362548830000
+    Position.Y = 153.053359985351600000
+    Size.Width = 149.852310180664100000
+    Size.Height = 20.327468872070310000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claDarkblue
+    Text = 'Nome'
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    Align = Scale
+    StyledSettings = [Family, Size, Style]
+    Position.X = 39.960590362548830000
+    Position.Y = 210.448455810546900000
+    Size.Width = 149.852310180664100000
+    Size.Height = 20.327484130859380000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claDarkblue
+    Text = 'Senha'
+    TabOrder = 6
+  end
+  object Label4: TLabel
+    Align = Scale
+    StyledSettings = [Family, Size, Style]
+    Position.X = 259.743988037109400000
+    Position.Y = 210.448455810546900000
+    Size.Width = 149.852722167968800000
+    Size.Height = 20.327484130859380000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claDarkblue
+    Text = 'Confirma Senha'
+    TabOrder = 5
+  end
+  object edSenhaConfirma: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Scale
+    TabOrder = 1
+    Position.X = 259.743988037109400000
+    Position.Y = 229.580154418945300000
+    Size.Width = 194.808441162109400000
+    Size.Height = 26.306045532226560000
+    Size.PlatformDefault = False
+  end
+  object BtnConfirma: TSpeedButton
+    Align = Scale
+    Position.X = 369.635711669921900000
+    Position.Y = 277.409271240234400000
+    Size.Width = 99.901336669921880000
+    Size.Height = 39.458984375000000000
+    Size.PlatformDefault = False
+    Text = 'BtnConfirma'
+    object ImgBtnconfirma: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Scale
+      Position.X = 37.463005065917970000
+      Position.Y = 344.369201660156300000
+      Size.Width = 62.438369750976560000
+      Size.Height = 68.156311035156250000
+      Size.PlatformDefault = False
+    end
+  end
+  object ImagemView: TImageViewer
+    Align = Scale
+    Position.X = 333.421691894531300000
+    Position.Y = 19.131669998168950000
+    Size.Width = 124.876953125000000000
+    Size.Height = 143.487472534179700000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Viewport.Width = 120.900000000000000000
+    Viewport.Height = 139.500000000000000000
+    object ImgLogin: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Scale
+      Size.Width = 124.876998901367200000
+      Size.Height = 143.487503051757800000
+      Size.PlatformDefault = False
+    end
+  end
+  object btnCancela: TSpeedButton
+    Align = Scale
+    Position.X = 229.773712158203100000
+    Position.Y = 277.409271240234400000
+    Size.Width = 99.901733398437500000
+    Size.Height = 39.458984375000000000
+    Size.PlatformDefault = False
+    Text = 'BtnCancela'
+    object imgBtnCancela: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Scale
+      Position.X = 37.463111877441410000
+      Position.Y = 344.369201660156300000
+      Size.Width = 62.438667297363280000
+      Size.Height = 68.156311035156250000
+      Size.PlatformDefault = False
+    end
+  end
+end

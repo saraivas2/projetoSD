@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/17 00:15:41.000.416,=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/29 20:45:12.000.050,=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/29 20:45:23.000.018,=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/31 11:05:49.000.769,=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/31 11:19:51.000.168,C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\login_unit.pas</Transaction>
+    <Transaction>2023/07/31 11:19:51.000.168,C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\login_unit.fmx</Transaction>
+    <Transaction>2023/07/31 11:20:01.000.874,C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\ProjTelaLogin.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

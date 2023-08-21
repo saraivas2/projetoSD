@@ -1,0 +1,14 @@
+program ProjTelaCad;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  Cad_us_unit in 'Cad_us_unit.pas' {FormCadUs};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFormCadUs, FormCadUs);
+  Application.Run;
+end.

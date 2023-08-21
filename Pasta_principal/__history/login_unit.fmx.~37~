@@ -1,0 +1,117 @@
+object FormLoginUs: TFormLoginUs
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  BorderStyle = SizeToolWin
+  Caption = 'Chat - Login'
+  ClientHeight = 223
+  ClientWidth = 312
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object edLogin: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Scale
+    TabOrder = 3
+    Text = '12345678910'
+    Position.X = 41.000000000000000000
+    Position.Y = 55.000000000000000000
+    Size.Width = 230.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object edSenha: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Scale
+    TabOrder = 2
+    Text = '123'
+    Position.X = 41.000000000000000000
+    Position.Y = 118.000000000000000000
+    Size.Width = 230.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    Align = Scale
+    StyledSettings = [Family, Size]
+    Position.X = 41.000000000000000000
+    Position.Y = 37.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.FontColor = claDarkblue
+    Text = 'Login'
+    TabOrder = 5
+  end
+  object Label3: TLabel
+    Align = Scale
+    StyledSettings = [Family, Size]
+    Position.X = 41.000000000000000000
+    Position.Y = 100.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.FontColor = claDarkblue
+    Text = 'Senha'
+    TabOrder = 4
+  end
+  object BtnConfirma: TSpeedButton
+    Align = Scale
+    Position.X = 164.000000000000000000
+    Position.Y = 163.000000000000000000
+    Size.Width = 102.000000000000000000
+    Size.Height = 37.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'BtnConfirma'
+    OnClick = BtnConfirmaClick
+    object ImgBtnconfirma: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Scale
+      Position.X = 30.000000000000000000
+      Position.Y = 288.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object btnCancela: TSpeedButton
+    Align = Scale
+    Position.X = 41.000000000000000000
+    Position.Y = 163.000000000000000000
+    Size.Width = 102.000000000000000000
+    Size.Height = 37.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'BtnCancela'
+    OnClick = btnCancelaClick
+    object imgBtnCancela: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Scale
+      Position.X = 30.000000000000000000
+      Position.Y = 288.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object ednome: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Scale
+    TabOrder = 1
+    ReadOnly = True
+    Text = '123'
+    Position.X = 41.000000000000000000
+    Position.Y = 2.000000000000000000
+    Size.Width = 230.000000000000000000
+    Size.Height = 26.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+  end
+end
