@@ -1,0 +1,127 @@
+object FormCadUs: TFormCadUs
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Usuarios'
+  ClientHeight = 278
+  ClientWidth = 472
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object edLogin: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 16.788955688476560000
+    Position.Y = 45.431564331054690000
+    Size.Width = 294.856201171875000000
+    Size.Height = 27.470245361328130000
+    Size.PlatformDefault = False
+  end
+  object edNome: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 16.788955688476560000
+    Position.Y = 105.654739379882800000
+    Size.Width = 441.759338378906300000
+    Size.Height = 27.470230102539060000
+    Size.PlatformDefault = False
+  end
+  object edSenha: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 16.788955688476560000
+    Position.Y = 166.934448242187500000
+    Size.Width = 189.925079345703100000
+    Size.Height = 27.470245361328130000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    StyledSettings = [Family, Size, Style]
+    Position.X = 16.788955688476560000
+    Position.Y = 25.357151031494140000
+    Size.Width = 157.396514892578100000
+    Size.Height = 21.130970001220700000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claDarkblue
+    Text = 'Login'
+    TabOrder = 8
+  end
+  object Label2: TLabel
+    StyledSettings = [Family, Size, Style]
+    Position.X = 16.788955688476560000
+    Position.Y = 85.580307006835940000
+    Size.Width = 157.396514892578100000
+    Size.Height = 21.130950927734380000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claDarkblue
+    Text = 'Nome'
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    StyledSettings = [Family, Size, Style]
+    Position.X = 16.788955688476560000
+    Position.Y = 145.803543090820300000
+    Size.Width = 157.396514892578100000
+    Size.Height = 22.187561035156250000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claDarkblue
+    Text = 'Senha'
+    TabOrder = 6
+  end
+  object Label4: TLabel
+    StyledSettings = [Family, Size, Style]
+    Position.X = 247.637069702148400000
+    Position.Y = 145.803543090820300000
+    Size.Width = 157.396438598632800000
+    Size.Height = 22.187561035156250000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claDarkblue
+    Text = 'Confirma Senha'
+    TabOrder = 5
+  end
+  object edSenhaConfirma: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 247.637069702148400000
+    Position.Y = 166.934448242187500000
+    Size.Width = 204.615432739257800000
+    Size.Height = 27.470245361328130000
+    Size.PlatformDefault = False
+  end
+  object BtnConfirma: TSpeedButton
+    Position.X = 344.000000000000000000
+    Position.Y = 217.000000000000000000
+    Size.Width = 124.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'BtnConfirma'
+    object ImgBtnconfirma: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Position.X = 39.349090576171880000
+      Position.Y = 368.831390380859400000
+      Size.Width = 65.581848144531250000
+      Size.Height = 72.997711181640630000
+      Size.PlatformDefault = False
+    end
+  end
+  object btnCancela: TSpeedButton
+    Position.X = 208.000000000000000000
+    Position.Y = 217.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'BtnCancela'
+    object imgBtnCancela: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Position.X = 39.349079132080080000
+      Position.Y = 368.831390380859400000
+      Size.Width = 65.581954956054690000
+      Size.Height = 72.997711181640630000
+      Size.PlatformDefault = False
+    end
+  end
+end

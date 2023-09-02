@@ -4,7 +4,6 @@ object FormCadUs: TFormCadUs
   Caption = 'Cadastro de Usuarios'
   ClientHeight = 278
   ClientWidth = 472
-  Position = DesktopCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -30,7 +29,6 @@ object FormCadUs: TFormCadUs
   object edSenha: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 2
-    Password = True
     Position.X = 16.788955688476560000
     Position.Y = 166.934448242187500000
     Size.Width = 189.925079345703100000
@@ -84,7 +82,6 @@ object FormCadUs: TFormCadUs
   object edSenhaConfirma: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 1
-    Password = True
     Position.X = 247.637069702148400000
     Position.Y = 166.934448242187500000
     Size.Width = 204.615432739257800000

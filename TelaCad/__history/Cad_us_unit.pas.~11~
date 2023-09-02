@@ -70,6 +70,9 @@ begin
                           if (id=login)then
                             begin
                                 confirma:=False;
+                            end
+                          else
+                            begin
                                 MessageDlg('Usuário já existe!',System.UITypes.TMsgDlgType.mtInformation, [System.UITypes.TMsgDlgBtn.mbYes], 0);
                             end;
                           DataModule1.MemTableUsuario.Next;
@@ -84,7 +87,7 @@ begin
 
 
                             TRequest.New.BaseURL(BASE_URL)
-                            .Resource('usuario')
+                            .Resource('usuairo')
                             .AddBody(json.ToJSON)
                             .Accept('application/json')
                             .Post;

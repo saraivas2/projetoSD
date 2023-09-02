@@ -1,4 +1,4 @@
-unit login_unit;
+unit cad_us_unit;
 
 interface
 
@@ -9,18 +9,18 @@ uses
 
 type
   TFormCadUs = class(TForm)
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
+    edLogin: TEdit;
+    edNome: TEdit;
+    edSenha: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Edit4: TEdit;
+    edSenhaConfirma: TEdit;
     BtnConfirma: TSpeedButton;
     ImgBtnconfirma: TImage;
     ImgLogin: TImage;
-    ImageViewer1: TImageViewer;
+    ImagemView: TImageViewer;
     btnCancela: TSpeedButton;
     imgBtnCancela: TImage;
   private
@@ -33,6 +33,7 @@ var
   FormCadUs: TFormCadUs;
 
 implementation
+uses module_chat;
 
 {$R *.fmx}
 

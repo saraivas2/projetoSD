@@ -1,4 +1,4 @@
-﻿unit cad_us_unit;
+unit cad_us_unit;
 
 interface
 
@@ -45,9 +45,8 @@ var
   id, nomeus, nome, senha,
   login, confsenha: String;
   json: TJSONObject;
-  confirma:Boolean;
+
 begin
-      confirma:=True;
       nome:=edNome.Text;
       login:=edLogin.Text;
       senha:=edSenha.text;
@@ -63,38 +62,39 @@ begin
                     .Resource('usuario')
                     .Adapters(TDataSetSerializeAdapter.New(DataModule1.MemTableUsuario))
                     .Get;
+
                 while NOT DataModule1.MemTableUsuario.Eof do
                     begin
                           id:=DataModule1.MemTableUsuario.FieldByName('usuarioid').AsString;
                           nomeus:= DataModule1.MemTableUsuario.FieldByName('nome').AsString;
-                          if (id=login)then
+                          if not (id=login)then
                             begin
-                                confirma:=False;
+                                begin
+                                    json:= TJSONObject.Create;
+                                    json.AddPair('nome',nome);
+                                    json.AddPair('senha',senha);
+                                    json.AddPair('usuarioid',login);
+
+
+                                    TRequest.New.BaseURL(BASE_URL)
+                                    .Resource('usuairo')
+                                    .AddBody(json.ToJSON)
+                                    .Accept('application/json')
+                                    .Post;
+
+                                     edNome.Text:= ' ';
+                                     edLogin.Text:= ' ';
+                                     edSenha.text:= ' ';
+                                     edSenhaConfirma.Text:=' ';
+                                end;
+
+                            end
+                          else
+                            begin
                                 MessageDlg('Usuário já existe!',System.UITypes.TMsgDlgType.mtInformation, [System.UITypes.TMsgDlgBtn.mbYes], 0);
                             end;
                           DataModule1.MemTableUsuario.Next;
                     end;
-
-                    if confirma = True then
-                        begin
-                            json:= TJSONObject.Create;
-                            json.AddPair('nome',nome);
-                            json.AddPair('senha',senha);
-                            json.AddPair('usuarioid',login);
-
-
-                            TRequest.New.BaseURL(BASE_URL)
-                            .Resource('usuario')
-                            .AddBody(json.ToJSON)
-                            .Accept('application/json')
-                            .Post;
-
-                             edNome.Text:= ' ';
-                             edLogin.Text:= ' ';
-                             edSenha.text:= ' ';
-                             edSenhaConfirma.Text:=' ';
-                        end;
-
               Except
                   MessageDlg('Erro ao cadastrar usuário!',System.UITypes.TMsgDlgType.mtInformation, [System.UITypes.TMsgDlgBtn.mbYes], 0);
               end;
