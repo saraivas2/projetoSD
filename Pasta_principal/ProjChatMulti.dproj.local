@@ -3,8 +3,8 @@
 	<Transactions>
     <Transaction>2023/05/17 00:15:41.000.416,=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2023/07/28 00:41:14.000.511,=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/07/28 00:41:51.000.476,C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\Chat_mult.pas</Transaction>
-    <Transaction>2023/07/28 00:41:51.000.476,C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\Chat_mult.fmx</Transaction>
-    <Transaction>2023/07/28 00:42:02.000.332,C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\ProjChatMulti.dproj</Transaction>
+    <Transaction>2023/07/28 00:41:51.000.476,C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\Chat_mult.pas=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/28 00:41:51.000.476,C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\Chat_mult.fmx=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2023/07/28 00:42:02.000.332,C:\Users\amsar\Downloads\Códigos programas\Chat_delphi\Cod\ProjChatMulti.dproj=C:\Users\amsar\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>

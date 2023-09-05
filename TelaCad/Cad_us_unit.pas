@@ -42,7 +42,7 @@ const
 
 procedure TFormCadUs.BtnConfirmaClick(Sender: TObject);
 var
-  id, nomeus, nome, senha,
+  id, nome, senha,
   login, confsenha: String;
   json: TJSONObject;
   confirma:Boolean;
@@ -66,7 +66,6 @@ begin
                 while NOT DataModule1.MemTableUsuario.Eof do
                     begin
                           id:=DataModule1.MemTableUsuario.FieldByName('usuarioid').AsString;
-                          nomeus:= DataModule1.MemTableUsuario.FieldByName('nome').AsString;
                           if (id=login)then
                             begin
                                 confirma:=False;
@@ -78,9 +77,10 @@ begin
                     if confirma = True then
                         begin
                             json:= TJSONObject.Create;
+                            json.AddPair('usuarioid',login);
                             json.AddPair('nome',nome);
                             json.AddPair('senha',senha);
-                            json.AddPair('usuarioid',login);
+
 
 
                             TRequest.New.BaseURL(BASE_URL)
@@ -89,10 +89,12 @@ begin
                             .Accept('application/json')
                             .Post;
 
-                             edNome.Text:= ' ';
-                             edLogin.Text:= ' ';
-                             edSenha.text:= ' ';
-                             edSenhaConfirma.Text:=' ';
+                             edNome.Text:= '';
+                             edLogin.Text:= '';
+                             edSenha.text:= '';
+                             edSenhaConfirma.Text:='';
+                             edLogin.SetFocus;
+                             MessageDlg('Cadastro concluído com sucesso!',System.UITypes.TMsgDlgType.mtInformation, [System.UITypes.TMsgDlgBtn.mbYes], 0);
                         end;
 
               Except

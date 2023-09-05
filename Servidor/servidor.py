@@ -11,16 +11,16 @@ def create_table():
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS messages 
                  (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                  mensagem VARCHAR(200),
-                  data CHAR(20),
-                  usuarioenv CHAR(11), 
-                  usuariorec CHAR(11))''')
+                  mensagem TEXT,
+                  data TEXT,
+                  usuarioenv TEXT, 
+                  usuariorec TEXT)''')
     c.execute('''CREATE TABLE IF NOT EXISTS listacontato 
-                 (id INTEGER PRIMARY KEY AUTOINCREMENT, usuarioid CHAR(11),
-                  nomeusuario CHAR(40), idcontato CHAR(11), nomecontato CHAR(40))''')
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT, usuarioid TEXT,
+                  nomeusuario TEXT, idcontato TEXT, nomecontato TEXT)''')
     c.execute('''CREATE TABLE IF NOT EXISTS usuario 
-                 (id INTEGER PRIMARY KEY AUTOINCREMENT, usuarioid CHAR(11),
-                  nome CHAR(40), senha CHAR(25))''')
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT, usuarioid TEXT,
+                  nome TEXT, senha TEXT)''')
     
     conn.commit()
     conn.close()
@@ -146,9 +146,10 @@ def usuario_cad():
         resp_usuario = []
         for pessoa in usuario:
             usuario_dict = {
-                'usuarioid': pessoa[0],
-                'nome': pessoa[1],
-                'senha': pessoa[2]
+                'id': pessoa[0],
+                'usuarioid': pessoa[1],
+                'nome': pessoa[2],
+                'senha': pessoa[3]
             }
             resp_usuario.append(usuario_dict)
 
