@@ -12,8 +12,8 @@
 
 </head>
 <body>
-  
   <form id="chat">
+
     <input type="text" name="username" id="Digite o usuário">
     <div class="messages"></div>
     <input type="text" name="message">
@@ -72,9 +72,13 @@
 
     })
 
+    function addUser() {
 
+      const username = document.getElementById('username').value;
+      socket.emit('addUser', { username });
 
-  </script>
+    }
 
+</script>
 </body>
 </html>
