@@ -6,6 +6,7 @@ const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 
 app.use(express.static(path.join(__dirname, 'public')))
+
 app.set('views',path.join(__dirname,'public'))
 app.engine('html',require('ejs').renderFile)
 app.set('view engine','html')
@@ -17,10 +18,9 @@ app.use('/',(req,res) =>{
 })
 
 let messages = []
+let users = []
 
-
-
-io.on('connection',socket=>{
+io.on('connection',socket => {
 
     console.log("Socket conectado")
 
@@ -28,8 +28,34 @@ io.on('connection',socket=>{
 
     socket.on('sendMessage',data =>{
         
-        messages.push(data)
-        socket.broadcast.emit('receivedMessage',data)
+        const messageUser = {
+
+            author: data.author,
+            message: data.message,
+
+        }
+
+        messages.push(messageUser)
+        socket.broadcast.emit('receivedMessage',messageUser)
+
+    })
+
+    socket.on('disconnect', () => {
+
+        console.log('User disconnected')
+
+    })
+
+    socket.on('addUser', (user) => {
+
+        users.push(user)
+        io.emit('userList', users)
+
+    })  
+
+    socket.on('getUserList', () => {
+
+        io.emit('userList', users)
 
     })
 
