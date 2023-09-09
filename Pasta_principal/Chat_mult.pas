@@ -203,6 +203,7 @@ begin
       end
       else
       begin
+
           AddMessage(cont, digitado, datahora, env,rec,True);
 
           json:= TJSONObject.Create;
@@ -384,7 +385,6 @@ procedure TChat_form.FormShow(Sender: TObject);
 begin
          FormLoginUs.ShowModal;
          cod_login:= FormLoginUs.codlogin;
-         LabelUsuario.Text:= FormLoginUs.ednome.text;
          ListarUsuarios;
          ListarContatos;
          ListarMensagem;
@@ -452,6 +452,11 @@ begin
                 id:=DataModule1.MemTableUsuario.FieldByName('usuarioid').AsString;
                 nome:= DataModule1.MemTableUsuario.FieldByName('nome').AsString;
                 CBcontatos.Items.Add(nome);
+                if id=cod_login then
+                begin
+                  LabelUsuario.Text:= nome;
+                  nome_login:=nome;
+                end;
                 DataModule1.MemTableUsuario.Next;
           end;
     Except
@@ -511,6 +516,7 @@ begin
                                 end;
                         end;
                 DataModule1.MemTableContatos.Next;
+
           end;
     Except
         MessageDlg('Erro ao carregar contatos!',System.UITypes.TMsgDlgType.mtInformation, [System.UITypes.TMsgDlgBtn.mbYes], 0);

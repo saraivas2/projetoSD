@@ -15,7 +15,7 @@ object FormLoginUs: TFormLoginUs
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     Align = Scale
     TabOrder = 3
-    Text = '12345678910'
+    Text = '12345678907'
     Position.X = 41.000000000000000000
     Position.Y = 55.000000000000000000
     Size.Width = 230.000000000000000000

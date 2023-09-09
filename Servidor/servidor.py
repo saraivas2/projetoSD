@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
 import sqlite3
-import os
+import bcrypt
 
 app = Flask(__name__)
 DB_FILE = "chat_database.db"
 
-# Criação da tabela de mensagens caso não exista
+# Criar tabelas do bando de dados
 def create_table():
     conn = sqlite3.connect(DB_FILE)
     c = conn.cursor()
@@ -38,8 +38,10 @@ def insert_message(mensagem, data, usuarioenv, usuariorec):
 def insert_usuario(usuarioid, nome,senha):
     conn = sqlite3.connect(DB_FILE)
     c = conn.cursor()
+    # Hash the password before storing it
+    hashed_password = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt())
     c.execute('''INSERT INTO usuario (usuarioid,nome,senha) 
-                 VALUES (?,?,?)''', (usuarioid,nome,senha))
+                 VALUES (?,?,?)''', (usuarioid,nome,hashed_password))
     
     conn.commit()
     conn.close()
@@ -63,6 +65,33 @@ def get_messages(login, contato):
     conn.close()
     return messages
 
+# Validação da senha do usuário
+def validate_passward(password, hash_password):
+    retorno=bcrypt.checkpw(password, hash_password)
+    return retorno
+
+
+# Autenticação do usuário
+@app.route('/autentico', methods=['POST'])
+def authenticate_user():
+    if request.method == 'POST':
+        data = request.get_json()
+        usuarioid = data['usuarioid']
+        senha = data['senha']
+
+        conn = sqlite3.connect(DB_FILE)
+        c = conn.cursor()
+        c.execute('SELECT senha FROM usuario WHERE usuarioid = ?', (usuarioid,))
+        hash_senha = c.fetchone()
+
+        if hash_senha is None:
+            return jsonify({'error': False}), 401
+
+        if validate_passward(senha.encode('utf-8'), hash_senha[0]):
+            return jsonify({'message': True}), 200
+        else:
+            return jsonify({'error': False}), 401
+
 # Obter todas os usuário do banco de dados
 def get_usuarios():
     conn = sqlite3.connect(DB_FILE)
@@ -71,7 +100,6 @@ def get_usuarios():
     usuario = c.fetchall()
     conn.close()
     return usuario
-
 # Obter todas os contatos do banco de dados
 def get_contatos():
     conn = sqlite3.connect(DB_FILE)
@@ -133,13 +161,13 @@ def usuario_cad():
         usuarioid = data['usuarioid']
         nome = data['nome']
         senha = data['senha']
-        # Salvar o usuário no banco de dados
+
+        # Save the hashed password in the database
         insert_usuario(usuarioid, nome, senha)
 
         return jsonify({'status': 'Usuário inserido com sucesso!'})
-
     else:
-        # Obter todas os usuários do banco de dados
+       # Obter todas os usuários do banco de dados
         usuario = get_usuarios()
 
         # Preparar a resposta em formato JSON
@@ -149,7 +177,7 @@ def usuario_cad():
                 'id': pessoa[0],
                 'usuarioid': pessoa[1],
                 'nome': pessoa[2],
-                'senha': pessoa[3]
+                
             }
             resp_usuario.append(usuario_dict)
 
